@@ -1,4 +1,5 @@
 #!/bin/bash
+## Script to get the most recent tcp opened connection and record its IP into ./data/ips.log
 
 # Change active directory to data/
 cd data
