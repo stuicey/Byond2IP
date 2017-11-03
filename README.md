@@ -1,6 +1,6 @@
 # Byond2IP 
 
-A web scraper that can convert byond://BYOND.world.[DIGITS] into [IP ADDR]:[PORT] format.
+A web scraper that can convert `byond://BYOND.world.[123456789]` into `[IP ADDR]:[PORT]` format.
 
 ## About
 
