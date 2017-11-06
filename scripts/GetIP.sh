@@ -4,8 +4,8 @@
 # Change active directory to data/
 cd data
 
-# Query netstat and grep for non SSH,DNS or byond ports (20002,6001)
-netstat -nt | grep -P ':(?!22)\d+\s+(([\d|\.])+\:(?!(20002|6001|53))\d+)' | awk '{print $5}' > .netstat.log
+# Query netstat and grep for non SSH,DNS,HTML or byond ports (20002,6001)
+netstat -nt | grep -P ':(?!22)\d+\s+(([\d|\.])+\:(?!(20002|6001|53|80))\d+)' | awk '{print $5}' > .netstat.log
 
 # Get the different IP address from the netstat logs
 IP=$(diff .netstat.log .netstat.log.bak | grep "<" | cut -d" " -f 2)
