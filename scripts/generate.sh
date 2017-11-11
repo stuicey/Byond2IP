@@ -5,7 +5,7 @@
 cd "$(dirname "$0")"
 
 # Check the byond hub for new servers
-sh GetByond.py
+python GetByond.py
 
 # ./config/worlds.txt should be generated now so lets convert to IP
 # Recompile Byond2IP.dm incase of modification
