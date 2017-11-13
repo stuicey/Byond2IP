@@ -24,7 +24,7 @@ Alternatively the list can be automatically generated from the byond hub by runn
 
 ## How it works
 
-Byond2IP starts up a minimal Byond application that reads the list of worlds from `./config/worlds.txt` and then uses `world.Export()` to query servers with the `?ping` command via `world/Topic()`. Through this exchange the byond hub decodes the Byond URL and a connection is opened to the actual IP address. This address is then retrieved by referencing the output of `netstat`. 
+Byond2IP starts up a minimal Byond application that reads the list of worlds from `./config/worlds.txt` and then uses `world.Export()` to query servers with the `?ping` command via `world/Topic()`. Through this exchange the byond hub decodes the Byond URL and a connection is opened to the actual IP address. This address is then retrieved by referencing the output of `netstat`. Due to this requirement Byond2IP will only output reliable results on a system with minimal network traffic. 
 
 ## Future Work
 
