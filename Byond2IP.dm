@@ -11,14 +11,12 @@
 
 	for(var/item in list)
 		if(!item)	break
-		world.log << "Checking " + item
+		world.log << "Checking " + item 
 		
 		// For each item in [list] ping the byond world address
 		// world Export doesn't handle timeouts?? so spawn(0) it for non-blocking connection
-		spawn(0)
-			world.Export("byond://BYOND.world." + splittext(item, ":")[2] + "?ping", 1)
-		// Wait 0.8s for the connection to be made
-		sleep(8)
+		result = world.Export("byond://BYOND.world." + splittext(item, ":")[2] + "?ping", 1)
+		if(!result)	continue
 
 		// Check netstat to reveal the real IP address
 		shell("sh scripts/GetIP.sh " + splittext(item, ":")[1])
